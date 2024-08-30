@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+  background-color: #f7f7f7;
+}
+body header {
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: min-height 250ms ease, background-color 250ms ease;
+}
+body header .desktop {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1140px;
+}
+body header .desktop img {
+  display: none;
+  max-height: 45px;
+}
+body header .desktop ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  width: 100%;
+}
+body header .desktop ul li {
+  list-style-type: none !important;
+  font-family: "Roboto Condensed";
+  font-size: 14px;
+  font-weight: 700;
+}
+body header .desktop ul li a {
+  color: #0d0d0d;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+body header .desktop ul li a.active, body header .desktop ul li a:hover {
+  opacity: 0.66;
+}
+body header.scroll {
+  min-height: 55px;
+  background-color: #fff;
+}
+body header.scroll .desktop img {
+  display: block;
+}
+body main .music {
+  position: relative;
+  background-image: url("../img/bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body main .music .bgOverlay {
+  background-color: rgba(255, 255, 255, 0.44);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+body main .music .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body main .banner {
+  position: relative;
+  background-image: url("../img/bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+}
+body main .banner .banOverlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+body main .banner h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 96px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 1;
+  font-family: Oswald;
+  text-transform: uppercase;
+  color: #fff;
+}
+body main .content {
+  margin: auto;
+  padding: 80px 0;
+  max-width: 1140px;
+  color: #676767;
+  line-height: 1.88;
+  font-weight: 400;
+  font-size: 16px;
+}
+body main .biography .content {
+  max-width: 750px;
+}/*# sourceMappingURL=style.css.map */
