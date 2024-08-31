@@ -3,6 +3,11 @@ body {
     font-family: "Roboto";
     background-color: #f7f7f7;
 
+    .wrap {
+        max-width: 1140px;
+        margin: auto;
+    }
+
     header {
         min-height: 100px;
         display: flex;
@@ -12,7 +17,7 @@ body {
         top: 0;
         left: 0;
         right: 0;
-        z-index: 1;
+        z-index: 5;
         transition: min-height 250ms ease, background-color 250ms ease;
 
         .desktop {
@@ -76,7 +81,7 @@ body {
 
         .music {
             position: relative;
-            background-image: url('../img/bg.jpg');
+            background-image: url("../img/bg.jpg");
             background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;
@@ -96,11 +101,90 @@ body {
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
+            .audio {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                color: #333;
+    
+                .song {
+                    font-size: 12px;
+
+                    .index {
+                        font-weight: 700;
+                    }
+                }
+
+                .time {
+                    font-size: 11px;
+                }
+
+                .audiolist {
+                    padding: 12px 0;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 24px;
+                    max-height: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    background-color: rgba(255, 255, 255, .66);
+                    transition: max-height 250ms ease, opacity 250ms ease;
+
+                    .track {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 20px;
+                        cursor: pointer;
+                    }
+
+                    &.show {
+                        max-height: 750px;
+                        opacity: 1;
+                    }
+                }
+
+                .audiobar {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    z-index: 1;
+                    padding: 15px 20px;
+
+                    .timeSlider {
+                        background-color: rgba(0, 0, 0, 0.15) !important;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        z-index: -1;
+                    }
+    
+                    .btn {
+                        cursor: pointer;
+                    }
+    
+                    .left {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 15px;
+                    }
+    
+                    .right {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 15px;
+                    }
+                }
+            }
         }
 
         .banner {
             position: relative;
-            background-image: url('../img/bg.jpg');
+            background-image: url("../img/bg.jpg");
             background-position: center top;
             background-repeat: no-repeat;
             background-size: cover;
@@ -119,10 +203,10 @@ body {
                 width: fit-content;
                 margin: 0 auto;
                 font-size: 96px;
-                font-weight: 700;
+                font-weight: 500;
                 text-align: center;
                 line-height: 1.5;
-                letter-spacing: 1;
+                letter-spacing: 1px;
                 font-family: Oswald;
                 text-transform: uppercase;
                 color: #fff;
@@ -130,9 +214,7 @@ body {
         }
 
         .content {
-            margin: auto;
             padding: 80px 0;
-            max-width: 1140px;
             color: #676767;
             line-height: 1.88;
             font-weight: 400;
@@ -141,10 +223,123 @@ body {
 
         .videos {
 
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+
+                .image {
+                    width: calc(100% / 3);
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .center {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        opacity: 1;
+                        transform: translate(-50%, -50%);
+                        transition: opacity 750ms ease, transform 750ms ease;
+
+                        i {
+                            color: #fff;
+                            padding: 10px;
+                            border-width: 1px;
+                            border-style: solid;
+                            border-color: #fff;
+                            border-radius: 50%;
+
+                            &::before {
+                                margin-left: 2px;
+                            }
+                        }
+                    }
+
+                    .bottom {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        font-family: "Roboto Condensed";
+                        font-size: 16px;
+                        padding: 14px 44px;
+                        color: #fff;
+                        text-align: center;
+                        max-height: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        transition: max-height 750ms ease, opacity 750ms ease;
+                    }
+
+                    &:hover {
+
+                        .center {
+                            opacity: 0.5;
+                            transform: translate(-50%, -100%);
+                        }
+    
+                        .bottom {
+                            max-height: 100%;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
         }
 
         .projects {
 
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+
+                .image {
+                    width: calc(100% / 3);
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1.2);
+                        transition: transform 750ms ease;
+                    }
+
+                    .top {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        font-size: 18px;
+                        color: transparent;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: opacity 500ms ease, color 2500ms ease;
+                    }
+
+                    &:hover {
+                        
+                        img {
+                            transform: scale(1);
+                        }
+
+                        .top {
+                            opacity: 1;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
         }
 
         .biography {
@@ -156,10 +351,82 @@ body {
 
         .pictures {
 
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+
+                .image {
+                    width: 25%;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1);
+                        transition: transform 750ms ease;
+                    }
+
+                    &:hover {
+
+                        img {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
         }
 
         .contact {
 
+            .content {
+                max-width: 750px;
+
+                .form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 20px;
+
+                    input,
+                    textarea {
+                        border: 1px solid #fff;
+                        border-color: ( 13,13,13, 0.08);
+                        border-radius: 4px;
+                        box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.025);
+                        padding: 12px;
+                    }
+
+                    textarea {
+                        min-height: 250px;
+                    }
+
+                    button {
+                        background-color: #000;
+                        border: 1px solid #000;
+                        border-radius: 3px;
+                        color: #fff;
+                        font-size: 13px;
+                        padding: 18px 33px;
+                        cursor: pointer;
+                        transition: background-color 250ms ease, color 250ms ease;
+
+                        &:hover {
+                            background-color: #fff;
+                            color: rgb(103, 103, 103);
+                        }
+                    }
+                }
+            }
         }
+    }
+    
+    footer {
+        padding: 20px;
+        font-size: 12px;
+        line-height: 2;
+        background: #000;
+        color: #888;
+        transition: opacity .2s;
     }
 }
