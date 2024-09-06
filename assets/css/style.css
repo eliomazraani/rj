@@ -3,9 +3,85 @@ body {
   font-family: "Roboto";
   background-color: #f7f7f7;
 }
-body .wrap {
-  max-width: 1140px;
-  margin: auto;
+body .loading-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #f7f7f7;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+body .loading-overlay .loader {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+body .loading-overlay .loader .spinner-audio-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  color: #000000;
+  opacity: 1;
+  transition: opacity 0.2s 0.5s ease;
+}
+body .loading-overlay .loader .spinner-audio-wave span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 9px;
+  height: 5px;
+  background-color: #000000;
+  animation: audio-wave 1.5s infinite ease-in-out;
+}
+body .loading-overlay .loader .spinner-audio-wave span:nth-child(1) {
+  left: 11px;
+  animation-delay: 0.2s;
+}
+body .loading-overlay .loader .spinner-audio-wave span:nth-child(2) {
+  left: 22px;
+  animation-delay: 0.4s;
+}
+body .loading-overlay .loader .spinner-audio-wave span:nth-child(3) {
+  left: 33px;
+  animation-delay: 0.6s;
+}
+body .loading-overlay .loader .spinner-audio-wave span:nth-child(4) {
+  left: 44px;
+  animation-delay: 0.8s;
+}
+@keyframes audio-wave {
+  0% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #000000;
+  }
+  25% {
+    height: 40px;
+    transform: translateY(20px);
+    background: #000000;
+  }
+  50% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #000000;
+  }
+  100% {
+    height: 5px;
+    transform: translateY(0px);
+    background: #000000;
+  }
+}
+body .loading-overlay.hide {
+  opacity: 0;
+  z-index: -999;
+  transition: opacity 0.3s ease, z-index 0.1s 1s linear;
 }
 body header {
   min-height: 100px;
@@ -17,7 +93,7 @@ body header {
   left: 0;
   right: 0;
   z-index: 5;
-  transition: min-height 250ms ease, background-color 250ms ease;
+  transition: min-height 0.25s ease, background-color 0.25s ease;
 }
 body header .desktop {
   margin: auto;
@@ -82,6 +158,11 @@ body main .music .logo {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+body main .music .logo.fade {
+  opacity: 1;
 }
 body main .music .audio {
   position: absolute;
@@ -108,7 +189,7 @@ body main .music .audio .audiolist {
   opacity: 0;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.66);
-  transition: max-height 250ms ease, opacity 250ms ease;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
 }
 body main .music .audio .audiolist .track {
   display: flex;
@@ -152,13 +233,26 @@ body main .music .audio .audiobar .right {
   -moz-column-gap: 15px;
        column-gap: 15px;
 }
+body main .wrap {
+  max-width: 1140px;
+  margin: auto;
+}
 body main .banner {
   position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+body main .banner .banBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   background-image: url("../img/bg.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 80px 0;
 }
 body main .banner .banOverlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -195,8 +289,10 @@ body main .videos .grid {
 body main .videos .grid .image {
   width: 33.3333333333%;
   position: relative;
+  opacity: 0;
   overflow: hidden;
   cursor: pointer;
+  transition: opacity 1s ease;
 }
 body main .videos .grid .image img {
   width: 100%;
@@ -208,7 +304,7 @@ body main .videos .grid .image .center {
   left: 50%;
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: opacity 750ms ease, transform 750ms ease;
+  transition: opacity 0.75s ease, transform 0.75s ease;
 }
 body main .videos .grid .image .center i {
   color: #fff;
@@ -234,7 +330,10 @@ body main .videos .grid .image .bottom {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 750ms ease, opacity 750ms ease;
+  transition: max-height 0.75s ease, opacity 0.75s ease;
+}
+body main .videos .grid .image.fade {
+  opacity: 1;
 }
 body main .videos .grid .image:hover .center {
   opacity: 0.5;
@@ -251,14 +350,16 @@ body main .projects .grid {
 body main .projects .grid .image {
   width: 33.3333333333%;
   position: relative;
+  opacity: 0;
   overflow: hidden;
   cursor: pointer;
+  transition: opacity 1s ease;
 }
 body main .projects .grid .image img {
   width: 100%;
   height: 100%;
   transform: scale(1.2);
-  transition: transform 750ms ease;
+  transition: transform 0.75s ease;
 }
 body main .projects .grid .image .top {
   position: absolute;
@@ -273,7 +374,10 @@ body main .projects .grid .image .top {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 500ms ease, color 2500ms ease;
+  transition: opacity 0.5s ease, color 2.5s ease;
+}
+body main .projects .grid .image.fade {
+  opacity: 1;
 }
 body main .projects .grid .image:hover img {
   transform: scale(1);
@@ -292,13 +396,18 @@ body main .pictures .gallery {
 body main .pictures .gallery .image {
   width: 25%;
   overflow: hidden;
+  opacity: 0;
   cursor: pointer;
+  transition: opacity 1s ease;
 }
 body main .pictures .gallery .image img {
   width: 100%;
   height: 100%;
   transform: scale(1);
-  transition: transform 750ms ease;
+  transition: transform 0.75s ease;
+}
+body main .pictures .gallery .image.fade {
+  opacity: 1;
 }
 body main .pictures .gallery .image:hover img {
   transform: scale(1.2);
@@ -315,10 +424,12 @@ body main .contact .content .form {
 body main .contact .content .form input,
 body main .contact .content .form textarea {
   border: 1px solid #fff;
-  border-color: 13, 13, 13, 0.08;
+  border-color: rgba(13, 13, 13, 0.08);
   border-radius: 4px;
   box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.025);
   padding: 12px;
+  font-family: "Roboto";
+  font-size: 16px;
 }
 body main .contact .content .form textarea {
   min-height: 250px;
@@ -331,11 +442,100 @@ body main .contact .content .form button {
   font-size: 13px;
   padding: 18px 33px;
   cursor: pointer;
-  transition: background-color 250ms ease, color 250ms ease;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 body main .contact .content .form button:hover {
   background-color: #fff;
   color: rgb(103, 103, 103);
+}
+body .modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+body .modal .counter {
+  position: absolute;
+  top: 15px;
+  left: 35px;
+  color: #f1f1f1;
+  font-size: 16px;
+}
+body .modal i {
+  position: absolute;
+  color: #f1f1f1;
+  font-size: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body .modal .fa-times {
+  top: 15px;
+  right: 35px;
+}
+body .modal .fa-arrow-left {
+  top: 50%;
+  left: 35px;
+}
+body .modal .modalContent {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 75%;
+  animation: zoom 0.6s;
+}
+body .modal .modalContent img {
+  height: 100%;
+}
+body .modal .modalContent img.slide-left {
+  animation: slide-left 0.6s ease;
+}
+body .modal .modalContent img.slide-right {
+  animation: slide-right 0.6s ease;
+}
+body .modal .fa-arrow-right {
+  top: 50%;
+  right: 35px;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+body .modal.show {
+  display: flex;
 }
 body footer {
   padding: 20px;
@@ -343,5 +543,5 @@ body footer {
   line-height: 2;
   background: #000;
   color: #888;
-  transition: opacity 0.2s;
+  transition: opacity 0.25s;
 }/*# sourceMappingURL=style.css.map */

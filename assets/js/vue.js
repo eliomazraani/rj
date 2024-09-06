@@ -10,12 +10,30 @@ var songs = [
 ]
 
 var videos = [
-    "assets/img/bgRect.jpg",
-    "assets/img/bgRect.jpg",
-    "assets/img/bgRect.jpg",
-    "assets/img/bgRect.jpg",
-    "assets/img/bgRect.jpg",
-    "assets/img/bgRect.jpg",
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
+    {
+        image: "assets/img/bgRect.jpg",
+        source: "https://youtube.com"
+    },
 ];
 
 var projects = [
@@ -29,18 +47,19 @@ var projects = [
 
 var gallery = [
     "assets/img/bgSquare.png",
+    "assets/img/bgC.jpg",
     "assets/img/bgSquare.png",
+    "assets/img/bgC.jpg",
     "assets/img/bgSquare.png",
+    "assets/img/bgC.jpg",
     "assets/img/bgSquare.png",
-    "assets/img/bgSquare.png",
-    "assets/img/bgSquare.png",
-    "assets/img/bgSquare.png",
-    "assets/img/bgSquare.png",
+    "assets/img/bgC.jpg",
 ];
 
 const app = Vue.createApp({
     data() {
         return {
+            isLoading: true,
             page: "home",
             windowWidth: window.innerWidth,
             scrollPosition: 0,
@@ -54,19 +73,35 @@ const app = Vue.createApp({
             playClicked: false,
             listShow: false,
             time: "0:00",
+            videosFade: false,
+            projectsFade: false,
+            picturesFade: false,
+            imageIndex: null,
+            showModal: false,
         };
     },
     mounted() {
         window.addEventListener("resize", this.updateWindowWidth);
         window.addEventListener("resize", this.updateSectionOffsets);
         window.addEventListener("scroll", this.scrollTop);
+        window.addEventListener("scroll", this.scrollFade);
+
         this.setHeight();
         this.updateSectionOffsets();
         this.setDurations();
-        const audio = document.getElementById("currentTrack");
-        audio.addEventListener("loadedmetadata", this.updateDuration);
-        audio.addEventListener("timeupdate", this.updateTime);
-        audio.addEventListener('ended', this.handleAudioEnded);
+
+        const audio = $("#currentTrack");
+        audio.on("loadedmetadata", () => this.updateDuration());
+        audio.on("timeupdate", () => this.updateTime());
+        audio.on("ended", () => this.handleAudioEnded());
+        
+        setTimeout(() => {
+            this.isLoading = false;
+            $("#music .logo").addClass("fade");
+        }, 2000);
+
+        const today = new Date();
+        $("footer #date").html(today.getFullYear());
     },
     methods: {
         setHeight() {
@@ -74,23 +109,23 @@ const app = Vue.createApp({
         },
         setDurations() {
             for (let index = 0; index < songs.length; index++) {
-                const track = document.getElementById(`track${index + 1}`);
-                track.addEventListener('loadedmetadata', () => {
-                    const duration = track.duration;
+                const track = $(`#track${index + 1}`);
+                track.on('loadedmetadata', () => {
+                    const duration = track[0].duration;
                     const minutes = Math.floor(duration / 60);
                     const seconds = Math.floor(duration % 60);
-                    const time = document.getElementById(`time${index + 1}`);
-                    time.innerHTML = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+                    const time = $(`#time${index + 1}`);
+                    time.html(`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`);
                 });
             }
-        },
+        },        
         updateDuration() {
-            const audio = document.getElementById("currentTrack");
-            const duration = audio.duration;
+            const audio = $("#currentTrack");
+            const duration = audio[0].duration;
             const minutes = Math.floor(duration / 60);
             const seconds = Math.floor(duration % 60);
             this.time = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-        },
+        },        
         goToSection(name) {
             const targetElement = `#${name}`;
             $("html, body").animate({
@@ -99,16 +134,16 @@ const app = Vue.createApp({
         },
         playMusic() {
             this.playClicked = !this.playClicked;
-            const audio = document.getElementById("currentTrack");
+            const audio = $("#currentTrack");
 
             if (this.playClicked) {
-                audio.play();
+                audio[0].play();
             } else {
-                audio.pause();
+                audio[0].pause();
             }
         },
         updateTime() {
-            const audio = document.getElementById("currentTrack");
+            const audio = $("#currentTrack")[0];
             const minutes = Math.floor(audio.currentTime / 60);
             const seconds = Math.floor(audio.currentTime % 60);
             this.time = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
@@ -117,10 +152,9 @@ const app = Vue.createApp({
         },
         handleAudioEnded() {
             this.playClicked = false;
-            const audio = document.getElementById("currentTrack");
+            const audio = $("#currentTrack")[0];
             audio.currentTime = 0;
         },
-
         showList() {
             this.listShow = !this.listShow;
         },
@@ -130,6 +164,31 @@ const app = Vue.createApp({
             this.playClicked = false;
             this.listShow = false;
             $(".timeSlider").css("width", "0");
+        },
+        showImage(index, fromModal = false) {
+            if (fromModal) {
+                const direction = index === 1 ? "slide-left" : "slide-right";
+                $(".modalContent img").addClass(direction);
+                setTimeout(() => {
+                    $(".modalContent img").removeClass("slide-left slide-right");
+                }, 600);
+        
+                this.imageIndex += index;
+                if (this.imageIndex < 0) {
+                    this.imageIndex = this.gallery.length - 1;
+                }
+                if (this.imageIndex == this.gallery.length) {
+                    this.imageIndex = 0;
+                }
+            } else {
+                this.imageIndex = index;
+            }
+            
+            $("#modal img").attr("src", this.gallery[this.imageIndex]);
+            this.showModal = true;
+        },        
+        closeModal() {
+            this.showModal = false;
         },
         updateWindowWidth() {
             this.windowWidth = window.innerWidth;
@@ -146,6 +205,17 @@ const app = Vue.createApp({
                 pictures: $("#pictures").offset().top - 55,
                 contact: $("#contact").offset().top - 55,
             };
+        },
+        scrollFade() {
+            if (this.scrollPosition >= this.sectionOffsets.videos - 150) {
+                this.videosFade = true;
+            }
+            if (this.scrollPosition >= this.sectionOffsets.projects - 150) {
+                this.projectsFade = true;
+            }
+            if (this.scrollPosition >= this.sectionOffsets.pictures - 150) {
+                this.picturesFade = true;
+            }
         }
     },
 });
