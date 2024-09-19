@@ -21,6 +21,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -38,10 +39,10 @@
         </div>
     </div>
 
-    <header :class="{'scroll': scrollPosition > 50}">
+    <header :class="{'scroll': (scrollPosition > 50 || page == 'project')}">
         <div v-if="windowWidth > 767" class="desktop">
             <img src="assets/img/logo.png" alt="Img">
-            <ul>
+            <ul v-if="page == 'home'">
                 <li>
                     <a @click="goToSection('music')" :class="{'active': scrollPosition >= sectionOffsets.music && scrollPosition < sectionOffsets.videos}" href="#music">MUSIC</a>
                 </li>
@@ -61,6 +62,11 @@
                     <a @click="goToSection('contact')" :class="{'active': scrollPosition >= sectionOffsets.contact}" href="#contact">CONTACT</a>
                 </li>
             </ul>
+            <ul v-else style="justify-content: end;">
+                <li>
+                    <a @click="goHome()" href="">HOME</a>
+                </li>
+            </ul>
         </div>
         <!-- <div v-else class="mobile">
 
@@ -72,7 +78,7 @@
             <div class="music" id="music">
                 <div class="bgOverlay"></div>
                 <div class="logo">
-                    <img src="assets/img/logo.png" alt="Img">
+                    <img src="assets/img/logo&name.png" alt="Img">
                 </div>
                 <div class="audio">
                     <div :class="['audiolist', {'show' : listShow}]">
@@ -93,14 +99,14 @@
                         <audio id="currentTrack" :src="currentSong.source"></audio>
                         <div class="timeSlider"></div>
                         <div class="left">
-                            <div @click="playMusic()" :class="['playpause', 'btn', {'clicked' : playClicked }]">
+                            <div @click="playMusic('current')" :class="['playpause', 'btn', {'clicked' : playClicked }]">
                                 <i v-if="!playClicked" class="fa fa-play" aria-hidden="true"></i>
                                 <i v-else class="fa fa-pause" aria-hidden="true"></i>
                             </div>
-                            <div class="previous btn">
+                            <div @click="switchTrack(-1)" class="previous btn">
                                 <i class="fa fa-fast-backward" aria-hidden="true"></i>
                             </div>
-                            <div class="next btn">
+                            <div @click="switchTrack(1)" class="next btn">
                                 <i class="fa fa-fast-forward" aria-hidden="true"></i>
                             </div>
                             <div class="song">
@@ -120,7 +126,7 @@
             </div>
             <div class="videos" id="videos">
                 <div class="banner">
-                    <div class="banBG"></div>
+                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         VIDEOS
@@ -142,7 +148,7 @@
             </div>
             <div class="projects" id="projects">
                 <div class="banner">
-                    <div class="banBG"></div>
+                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         PROJECTS
@@ -150,10 +156,10 @@
                 </div>
                 <div class="wrap content">
                     <div class="grid">
-                        <div v-for="(proj, index) in projects" :class="['image', { 'fade': projectsFade }]" :style="{ transitionDelay: (index * 0.2) + 's' }">
-                            <img :src="proj" alt="Img">
+                        <div @click="openProject(index)" v-for="(proj, index) in projects" :class="['image', { 'fade': projectsFade }]" :style="{ transitionDelay: (index * 0.2) + 's' }">
+                            <img :src="proj.projectImg" alt="Img">
                             <div class="top">
-                                Project {{ index + 1 }}
+                                {{ proj.song.name }}
                             </div>
                         </div>
                     </div>
@@ -161,7 +167,7 @@
             </div>
             <div class="biography" id="biography">
                 <div class="banner">
-                    <div class="banBG"></div>
+                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         BIOGRAPHY
@@ -213,7 +219,7 @@
             </div>
             <div class="contact" id="contact">
                 <div class="banner">
-                    <div class="banBG"></div>
+                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         CONTACT
@@ -229,9 +235,104 @@
                 </div>
             </div>
         </div>
+        <div v-if="page == 'project'">
+            <div class="project">
+                <div class="wrap">
+                    <div class="left">
+                        <div class="song">
+                            <audio id="projectTrack" :src="projectSelected.song.source"></audio>
+                            <div @click="playMusic('project')" :class="['playpause', 'btn', {'clicked' : playClicked }]">
+                                <i v-if="!playClicked" class="fa fa-play" aria-hidden="true"></i>
+                                <i v-else class="fa fa-pause" aria-hidden="true"></i>
+                            </div>
+                            <div class="details">
+                                <div class="artist">
+                                    {{ projectSelected.song.artist }}
+                                </div>
+                                <div class="name">
+                                    {{ projectSelected.song.name }}
+                                </div>
+                                <div class="time">
+                                    {{ time }} / {{ total }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lyrics">
+                            <div class="title">
+                                LYRICS
+                            </div>
+                            <div :class="['description', {'arabic' : arabicLyrics}]">
+                                {{ projectSelected.lyrics }}
+                            </div>
+                        </div>
+                        <div class="story">
+                            <div class="title">
+                                STORY
+                            </div>
+                            <div class="description">
+                                {{ projectSelected.story }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="cover">
+                            <img src="assets/img/bgSquare.png" alt="Img">
+                        </div>
+                        <div class="name">
+                            {{ projectSelected.song.name }}
+                        </div>
+                        <div class="date">
+                            <b>Release Date:</b> {{ projectSelected.releaseDate }}
+                        </div>
+                        <div class="description">
+                            {{ projectSelected.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="previous box">
+                    <div @click="openProject(1, true)" v-if="projects[projectIndex + 1]" class="container" :style="{ backgroundImage: 'url(' + projects[projectIndex + 1].projectImg + ')' }">
+                        <div class="label">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            PREVIOUS
+                        </div>
+                        <div class="projectName">
+                            {{ projects[projectIndex + 1].song.name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="projectsList box">
+                    <div @click="goHome(true)" class="container">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="next box">
+                    <div @click="openProject(-1, true)" v-if="projects[projectIndex - 1]" class="container" :style="{ backgroundImage: 'url(' + projects[projectIndex - 1].projectImg + ')' }">
+                        <div class="label">
+                            NEXT
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </div>
+                        <div class="projectName">
+                            {{ projects[projectIndex - 1].song.name }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe">
+                <div class="wrap">
+                    <div class="title">SUBSCRIBE</div>
+                    <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
+                    <div class="inputField">
+                        <input type="email" placeholder="Your Email">
+                        <button>SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <div :class="['modal', {'show': showModal}]" id="modal">
+    <div v-if="page == 'home'" :class="['modal', {'show': showModal}]" id="modal">
         <div class="counter">{{ imageIndex + 1 }} / {{ gallery.length }}</div>
         <i @click="closeModal()" class="fa fa-times" aria-hidden="true"></i>
         <i @click="showImage(-1, true)" class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -243,7 +344,20 @@
 
     <footer>
         <div class="wrap">
-            &copy; <span id="date"></span> Raphael Jabbour. All Rights Reserved
+            <div class="rights">
+                &copy; <span id="date"></span> Raphael Jabbour. All Rights Reserved
+            </div>
+            <div class="media">
+                <a href="#">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-spotify" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
