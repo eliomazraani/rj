@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <header :class="{'scroll': (scrollPosition > 50 || page == 'project')}">
+    <header :class="[{'scroll': (scrollPosition > 50 || page == 'project')}, {'phone': windowWidth <= 767}]">
         <div v-if="windowWidth > 767" class="desktop">
             <img src="assets/img/logo.png" alt="Img">
             <ul v-if="page == 'home'">
@@ -68,10 +68,38 @@
                 </li>
             </ul>
         </div>
-        <!-- <div v-else class="mobile">
-
-        </div> -->
+        <div v-else class="mobile">
+            <img src="assets/img/logo.png" alt="Img">
+            <i v-if="page == 'home'" @click="slideMenu()"  class="fa fa-bars" aria-hidden="true"></i>
+            <a v-else @click="goHome()" href="">HOME</a>
+        </div>
     </header>
+
+    <div v-if="windowWidth <= 767" :class="['mobileMenu', {'slide': openMobileMenu}]">
+        <div class="menuList">
+            <i @click="closeMenu()" class="fa fa-times" aria-hidden="true"></i>
+            <ul>
+                <li>
+                    <a @click="goToSection('music')" href="#music">MUSIC</a>
+                </li>
+                <li>
+                    <a @click="goToSection('videos')" href="#videos">VIDEOS</a>
+                </li>
+                <li>
+                    <a @click="goToSection('projects')" href="#projects">PROJECTS</a>
+                </li>
+                <li>
+                    <a @click="goToSection('biography')" href="#biography">BIOGRAPHY</a>
+                </li>
+                <li>
+                    <a @click="goToSection('pictures')" href="#pictures">PICTURES</a>
+                </li>
+                <li>
+                    <a @click="goToSection('contact')" href="#contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <main>
         <div v-if="page == 'home'">
@@ -302,7 +330,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="projectsList box">
+                <div v-if="windowWidth > 767" class="projectsList box">
                     <div @click="goHome(true)" class="container">
                         <i class="fa fa-list" aria-hidden="true"></i>
                     </div>
@@ -324,8 +352,8 @@
                     <div class="title">SUBSCRIBE</div>
                     <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
                     <div class="inputField">
-                        <input type="email" placeholder="Your Email">
-                        <button>SUBSCRIBE</button>
+                        <input id="userEmail" type="email" placeholder="Your Email">
+                        <button @click="subscribe()">SUBSCRIBE</button>
                     </div>
                 </div>
             </div>

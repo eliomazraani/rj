@@ -159,6 +159,7 @@ const app = Vue.createApp({
             showModal: false,
             projectIndex: 1,
             projectSelected: projects[1],
+            openMobileMenu: false,
         };
     },
     mounted() {
@@ -222,12 +223,22 @@ const app = Vue.createApp({
             } else {
                 this.total = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
             }
-        },        
+        },
+        slideMenu() {
+            this.openMobileMenu = true;
+        },
+        closeMenu() {
+            this.openMobileMenu = false;
+        },
         goToSection(name) {
             const targetElement = `#${name}`;
             $("html, body").animate({
                 scrollTop: $(targetElement).offset().top - 55
             }, 1500);
+
+            if (this.windowWidth <= 767) {
+                this.openMobileMenu = false;
+            }
         },
         goHome(scrollToProject = false) {
             this.isLoading = true;
@@ -348,6 +359,11 @@ const app = Vue.createApp({
                 audio[0].load();
             }, 2000)
         },
+        subscribe() {
+            var email = $("#userEmail").val();
+            console.log(email);
+            $("#userEmail").val("");
+        },
         showImage(index, fromModal = false) {
             if (fromModal) {
                 const direction = index === 1 ? "slide-left" : "slide-right";
@@ -401,17 +417,19 @@ const app = Vue.createApp({
             }
         },
         parallaxEffect() {
-            const scrollPosition = $(window).scrollTop();
-            const parallaxSpeed = 0.3; 
+            if (this.windowWidth > 767) {
+                const scrollPosition = $(window).scrollTop();
+                const parallaxSpeed = 0.3; 
+                
+                $(".banner").each(function() {
+                    const image = $(this).find(".banBG");
             
-            $(".banner").each(function() {
-                const image = $(this).find(".banBG");
-        
-                if (image.length) {
-                    const imageOffset = scrollPosition * parallaxSpeed;
-                    image.css("transform", `translate(-50%, -${imageOffset}px)`);
-                }
-            });
+                    if (image.length) {
+                        const imageOffset = scrollPosition * parallaxSpeed;
+                        image.css("transform", `translate(-50%, -${imageOffset}px)`);
+                    }
+                });
+            }
         }
     },
 });
