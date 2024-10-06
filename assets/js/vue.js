@@ -170,6 +170,7 @@ const app = Vue.createApp({
         window.addEventListener("scroll", this.scrollTop);
         window.addEventListener("scroll", this.scrollFade);
         window.addEventListener("scroll", this.parallaxEffect);
+        window.addEventListener("click", this.handleMenu);
 
         this.setHeight();
         this.updateSectionOffsets();
@@ -430,7 +431,13 @@ const app = Vue.createApp({
                     }
                 });
             }
-        }
+        },
+        handleMenu(event) {
+            var menuList = $("header .mobile .fa-bars")[0];
+            if (this.openMobileMenu && !menuList.contains(event.target)) {
+                this.closeMenu();
+            }
+        },
     },
 });
 
