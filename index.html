@@ -347,16 +347,6 @@
                     </div>
                 </div>
             </div>
-            <div class="subscribe">
-                <div class="wrap">
-                    <div class="title">SUBSCRIBE</div>
-                    <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
-                    <div class="inputField">
-                        <input id="userEmail" type="email" placeholder="Your Email">
-                        <button @click="subscribe()">SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -368,6 +358,17 @@
             <img src="" alt="Img">
         </div>
         <i @click="showImage(1, true)" class="fa fa-arrow-right" aria-hidden="true"></i>
+    </div>
+
+    <div class="subscribe">
+        <div class="wrap">
+            <div class="title">SUBSCRIBE</div>
+            <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
+            <div class="inputField">
+                <input id="userEmail" type="email" placeholder="Your Email">
+                <button @click="subscribe()">SUBSCRIBE</button>
+            </div>
+        </div>
     </div>
 
     <footer>
