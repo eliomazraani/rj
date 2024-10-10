@@ -177,17 +177,22 @@ body .mobileMenu {
 body .mobileMenu .menuList {
   position: relative;
   width: 70%;
-  height: calc(100% - 20px);
+  height: calc(100% - 40px);
   right: -100%;
   float: right;
-  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   background-color: #000;
   transition: right 1s ease;
 }
-body .mobileMenu .menuList i {
+body .mobileMenu .menuList .fa-times {
+  position: absolute;
+  top: 10px;
+  right: 20px;
   font-size: 20px;
   color: #fff;
-  float: right;
 }
 body .mobileMenu .menuList ul {
   display: flex;
@@ -210,6 +215,35 @@ body .mobileMenu .menuList ul li a {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+body .mobileMenu .menuList .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+body .mobileMenu .menuList .bottom .subscribeButton {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #000;
+  font-size: 13px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  text-align: center;
+}
+body .mobileMenu .menuList .bottom .media {
+  display: flex;
+  gap: 15px;
+}
+body .mobileMenu .menuList .bottom .media a {
+  color: #888;
+}
+body .mobileMenu .menuList .bottom .media a i {
+  font-size: 17px;
+}
+body .mobileMenu .menuList .bottom .media a:hover {
+  color: #333;
+}
 body .mobileMenu.slide {
   z-index: 100;
   opacity: 1;
@@ -220,7 +254,7 @@ body .mobileMenu.slide .menuList {
 }
 body main .music {
   position: relative;
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/bgColor.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -394,6 +428,14 @@ body main .videos .grid .image img {
   width: 100%;
   height: 100%;
 }
+body main .videos .grid .image .overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 body main .videos .grid .image .center {
   position: absolute;
   top: 50%;
@@ -409,9 +451,6 @@ body main .videos .grid .image .center i {
   border-style: solid;
   border-color: #fff;
   border-radius: 50%;
-}
-body main .videos .grid .image .center i::before {
-  margin-left: 2px;
 }
 body main .videos .grid .image .bottom {
   position: absolute;
@@ -445,6 +484,9 @@ body main .videos .grid .image:hover .bottom {
   }
   body main .videos .grid .image {
     width: 100%;
+  }
+  body main .videos .grid .image img {
+    transform: scale(1.2);
   }
 }
 body main .projects .grid {
@@ -530,6 +572,9 @@ body main .pictures .gallery .image:hover img {
   }
   body main .pictures .gallery .image {
     width: 100%;
+  }
+  body main .pictures .gallery .image img {
+    transform: scale(1.1);
   }
 }
 body main .contact .content {
@@ -631,6 +676,8 @@ body main .project .wrap .left .song .playpause {
   align-items: center;
 }
 body main .project .wrap .left .song .playpause i {
+  width: 16px;
+  text-align: center;
   color: #fff;
   padding: 10px;
   border-width: 3px;
@@ -638,9 +685,6 @@ body main .project .wrap .left .song .playpause i {
   border-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   transition: border-color 0.5s ease;
-}
-body main .project .wrap .left .song .playpause i::before {
-  margin-left: 2px;
 }
 body main .project .wrap .left .song .playpause i:hover {
   border-color: white;
@@ -675,6 +719,10 @@ body main .project .wrap .right .date {
   margin-top: 20px;
   font-size: 16px;
 }
+body main .project .wrap .right .info {
+  margin-top: 10px;
+  font-size: 16px;
+}
 @media (max-width: 767px) {
   body main .project .wrap {
     flex-direction: column-reverse;
@@ -692,6 +740,7 @@ body .navigation .box {
   width: 33.3333333333%;
 }
 body .navigation .box .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -705,12 +754,22 @@ body .navigation .box .container {
   transition: background-size 0.25s ease, padding 0.25s ease;
   overflow: hidden;
 }
+body .navigation .box .container .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 body .navigation .box .container .label {
   font-size: 12px;
   text-transform: uppercase;
+  z-index: 1;
 }
 body .navigation .box .container .projectName {
   font-size: 16px;
+  z-index: 1;
 }
 body .navigation .box.previous i {
   margin-right: 5px;
@@ -720,6 +779,9 @@ body .navigation .box.projectsList .container {
   align-items: center;
   justify-content: center;
   height: calc(100% - 60px);
+}
+body .navigation .box.projectsList .container i {
+  z-index: 1;
 }
 body .navigation .box.next .container {
   align-items: flex-end;
@@ -932,6 +994,16 @@ body footer .wrap {
   display: flex;
   justify-content: space-between;
 }
+body footer .wrap .contactDetails {
+  display: flex;
+  gap: 20px;
+}
+body footer .wrap .contactDetails .mail,
+body footer .wrap .contactDetails .phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 body footer .wrap .media {
   display: flex;
   gap: 20px;
@@ -947,8 +1019,22 @@ body footer .wrap .media a:hover {
 }
 @media (max-width: 767px) {
   body footer .wrap {
-    flex-direction: column-reverse;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     row-gap: 20px;
+  }
+  body footer .wrap .rights {
+    order: 3;
+    margin: auto;
+  }
+  body footer .wrap .contactDetails {
+    order: 1;
+    flex-direction: column;
+    gap: 10px;
+  }
+  body footer .wrap .media {
+    order: 2;
+    margin: auto;
   }
 }/*# sourceMappingURL=style.css.map */

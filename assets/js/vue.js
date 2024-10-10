@@ -11,115 +11,100 @@ var songs = [
 
 var videos = [
     {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
+        image: "assets/img/videos/Hada_Y2ella.jpg",
+        name: "Hada Y2ella",
+        source: "https://youtu.be/JadTeiIRQ1E?si=FlPNhFh_lobtu7uB"
     },
     {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
+        image: "assets/img/videos/Matrah_Ma_Tnami.jpg",
+        name: "Matrah Ma Tnami",
+        source: "https://youtu.be/Haj_BY3e3g0?si=6OIyoiVG8R2fr6-G"
     },
     {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
+        image: "assets/img/videos/Waet_El_Gadd.jpg",
+        name: "Waat El Jadd",
+        source: "https://youtu.be/ycqyd0o-fOI?si=FBYAx-HufgwfBEMd"
     },
     {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
-    },
-    {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
-    },
-    {
-        image: "assets/img/bgRect.jpg",
-        source: "https://youtube.com"
+        image: "assets/img/videos/Shayef_Ya_Albi.jpg",
+        name: "Shayef Ya Albi",
+        source: "https://youtu.be/wzRzZj9D23U?si=xN09Gp4xcilzW9jT"
     },
 ];
 
 var projects = [
     {
-        projectImg: "assets/img/bgRect.jpg",
+        projectImg: "assets/projects/CarlosAzar/cover.jpg",
         song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 1",
-            source: "assets/audio/Hada_Y2ella.mp3",
+            artist: "Carlos Azar",
+            name: "Kel Ma Bdeelik",
+            source: "assets/projects/CarlosAzar/Kel_Ma_Bdeelik.mp3",
         },
-        lyrics: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        arabicLyrics: false,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-    },
-    {
-        projectImg: "assets/img/bgRect.jpg",
-        song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 2",
-            source: "assets/audio/Hada_Y2ella.mp3",
-        },
-        lyrics: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة. لقد تم توليد هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التي يولدها التطبيق.",
+        lyrics: "شو حكيولك عنّي <br> اوعا تكوني صدّقتي <br> صاير عم بغفا <br> وبوعا على صوتك انتِ <br> أنا كل ما بدقلّك <br> تقلّك شو اشتقتلّك <br> ما ردَّيتي قبل الدقّة <br> بحسّك طوَّلتي <br> أنتِ بقلبي وفكري <br> ولا لحظة تفتكري <br> إنّك بتغيبي عن بالي <br> يا حياتي انتِ <br> مين لِحطَّلك براسك <br> إني ناسيكي <br> أنا وقت لِبنساكي بكون <br> عم فكِّر فيكي <br> وبتخيَّل وجّك قدامي <br> وع ايديي عم بتنامي <br> وأنا قاعد هالليل بطولو <br> عم غنّج فيكي",
         arabicLyrics: true,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
+        story: "This composition is a deeply personal reflection of my inner world, a journey into memories filled with drama, nostalgia, and emotion. The lyrics convey raw and authentic feelings so I wanted the music to echo that same authenticity. <br> In this piece, we took a step back from digital production and recorded the instrumental track live. Each instrument, played in real-time, brought an emotional depth that simply couldn't be achieved otherwise. The result is a composition that feels as genuine and heartfelt as the moments it reflects, letting the listener feel every note and lyric with a unique intimacy.",
+        cover: "assets/projects/CarlosAzar/image.jpg",
+        releaseDate: "June 8, 2023",
+        lyricsBy: "Mounir Bou Assaf",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Alexandre Missakian",
+        mixAndMastering: "Jean Pierre Boutros",
+        studio: "Play Sound Studios",
+        digitalDistribution: "Youmusic Arabia",
     },
     {
-        projectImg: "assets/img/bgRect.jpg",
+        projectImg: "assets/projects/Cybelle/cover.jpg",
         song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 3",
-            source: "assets/audio/Hada_Y2ella.mp3",
+            artist: "Cybelle",
+            name: "Aala Mazajou",
+            source: "assets/projects/Cybelle/Aala_Mazajou.mp3",
         },
-        lyrics: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        arabicLyrics: false,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-    },
-    {
-        projectImg: "assets/img/bgRect.jpg",
-        song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 4",
-            source: "assets/audio/Hada_Y2ella.mp3",
-        },
-        lyrics: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة. لقد تم توليد هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التي يولدها التطبيق.",
+        lyrics: "صاير على مزاجو قلبي عم بدق وإن ما شافك يا حبيبي عليي صار ينق <br> صاير على مزاجو قلبي عم بدق وإن ما شافك يا حبيبي عليي صار ينق <br><br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> صاير على مزاجو قلبي عم بدق <br><br> يا لا لا لا لا لا لا لا <br> يا لا لا لا لا لا لا لا <br><br> كل ما بسمع غنية قلبي بذكرني فيك بلاقي حالي كل شوية من دون قصدي عم بحكيك <br> كل ما بسمع غنية قلبي بذكرني فيك بلاقي حالي كل شوية من دون قصدي عم بحكيك <br><br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> صاير على مزاجو قلبي عم بدق",
         arabicLyrics: true,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
+        story: "This song came straight from my heart, inspired by the beautiful moments of love. I wanted to capture the essence of romance and the emotions that come with being with someone special. The lyrics reflect a common experience— the internal struggle between the heart and the mind at the start of a relationship, where the heart ultimately wins. I paired these words with a groovy melody that invites you to dance. The simplicity of the lyrics led me to create a catchy, straightforward melodic sequence, and I made sure to keep the arrangement minimal, allowing each instrument to contribute without overpowering the essence of the song.",
+        cover: "assets/projects/Cybelle/image.jpg",
+        releaseDate: "September 6, 2023",
+        lyricsBy: "Raphael Jabbour",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Maroun Yammine",
+        mixAndMastering: "Jean Pierre Boutros",
+        studio: "Play Sound Studio",
+        digitalDistribution: "Watary",
     },
     {
-        projectImg: "assets/img/bgRect.jpg",
+        projectImg: "assets/projects/HadiDaou/cover.jpg",
         song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 5",
-            source: "assets/audio/Hada_Y2ella.mp3",
+            artist: "Hadi Daou",
+            name: "Mesh Aam Beqdar",
+            source: "assets/projects/HadiDaou/Mesh_Aam_Beqdar.mp3",
         },
-        lyrics: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        arabicLyrics: false,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-    },
-    {
-        projectImg: "assets/img/bgRect.jpg",
-        song: {
-            artist: "Raphael Jabbour",
-            name: "Hada Y2ella 6",
-            source: "assets/audio/Hada_Y2ella.mp3",
-        },
-        lyrics: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة. لقد تم توليد هذا النص من مولد النص العربي، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التي يولدها التطبيق.",
+        lyrics: "عم فتّش فيها عليكِ <br> حتى لاقيكي فيا <br> عم بتخايل عينيكِ <br> كلما بتطلّع فيا <br> وباخدها لنفس المطارح <br> يللّي كنا نروحا مبارح <br> ببقى حدها لكن سارح <br> فيكي ومش حاسس فيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا <br><br> عم جرّب  إلهي حالي <br> مع وحدة غيرِك إعشقا <br> وجرّب إمحيكي من بالي <br> تا حتى إنساكي بَقا <br> بس يلي عرفتا شو ذنبا <br> أظلمها وإجرح قلبا <br> ما زالِك انتي للي بحبّا <br> مش لازم فَكّر فِيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا",
         arabicLyrics: true,
-        story: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
-        cover: "assets/img/bgSquare.png",
-        releaseDate: "June 27, 2017",
-        description: "Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Integer tincidunt. Nulla sit amet est. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.",
+        story: "This track is full of energy, groove and movement. I made sure to include an oriental twist that reflects my roots. <br> While creating it, I imagined how I could melt all of these ideas together. I blended the rhythm and the melodies into one vibrant flow that feels both familiar and fresh. <br> Taking into consideration the unique character of hadi daou, I made sure to create a track that matches his style and live performances.",
+        cover: "assets/projects/HadiDaou/image.jpg",
+        releaseDate: "June 24, 2022",
+        lyricsBy: "Mounir Bou Assaf",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Georges Kassis",
+        mixAndMastering: "Alexandre Missakian",
+        digitalDistribution: "Watary",
+    },
+    {
+        projectImg: "assets/projects/NajiOsta/cover.jpg",
+        song: {
+            artist: "Naji Osta",
+            name: "Jiti Mn El Bahr",
+            source: "assets/projects/NajiOsta/Jiti_Mn_El_Bahr.mp3",
+        },
+        lyrics: "جيتي من البحر لونِك شو حلو <br> مسكوبِه الشمس عا جسمِك دخلو ما أجملو <br> شو فيكي سحر وشو زدتي حلا <br> حتى ملح البحر عليكي طعمو حلو <br><br> جيتي من البحر لونِك شو حلو <br> مسكوبِه الشمس عا جسمِك دخلو ما أجملو <br> شو فيكي سحر وشو زدتي حلا <br> حتى ملح البحر عليكي طعمو حلو <br><br> شو صار وضعي صعب ما عاد عندي قلب <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك ما بحمِلو <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك <br> (يقبرني الحلو) <br><br> لو رحتي بكرا خِديني معك <br> أنا ما بدي وجّع راسي <br> وبالي إشغِلو <br> خايف شي حدا <br> كلمة يسَمِّعِك <br> ويفكِّر يتغزَّل فيكي <br> يمكن بِقتِلو <br><br> شو صار وضعي صعب ما عاد عندي قلب <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك ما بحمِلو <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك <br> (يقبرني الحلو)",
+        arabicLyrics: true,
+        story: "This song is inspired by the vibrant spirit of summer where the man is playfully flirting with his mistress. <br> The melody is light and playful. I wanted the music to feel like a soundtrack to a day at the beach, easy to enjoy, with a rhythm that flows as naturally as the waves. <br> The whole song has a sunny vibe that makes you feel the warmth of the season while still hitting at the complexity of their connection.",
+        cover: "assets/projects/NajiOsta/image.jpg",
+        releaseDate: "July 6, 2023",
+        lyricsBy: "Mounir Bou Assaf",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Mounir Bou Assaf",
+        digitalDistribution: "Watary",
     },
 ];
 
@@ -359,6 +344,15 @@ const app = Vue.createApp({
                 audio.on("ended", () => this.handleAudioEnded(true));
                 audio[0].load();
             }, 2000)
+        },
+        contact() {
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var message = $("#message").val();
+            console.log(name, email, message);
+            $("#name").val("");
+            $("#email").val("");
+            $("#message").val("");
         },
         subscribe() {
             var email = $("#userEmail").val();
