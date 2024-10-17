@@ -479,9 +479,13 @@ body {
             .grid {
                 display: flex;
                 flex-wrap: wrap;
+                max-width: calc((2 * 100%) / 3);
+                margin: auto;
 
                 .image {
-                    width: calc(100% / 3);
+                    // width: calc(100% / 3);
+                    width: 50%;
+                    display: flex;
                     position: relative;
                     opacity: 0;
                     overflow: hidden;
@@ -558,13 +562,10 @@ body {
             @include screen767() {
                 .grid {
                     flex-direction: column;
+                    max-width: unset;
 
                     .image {
                         width: 100%;
-
-                        img {
-                            transform: scale(1.2);
-                        }
                     }
                 }
             }
@@ -575,9 +576,13 @@ body {
             .grid {
                 display: flex;
                 flex-wrap: wrap;
+                max-width: calc((2 * 100%) / 3);
+                margin: auto;
 
                 .image {
-                    width: calc(100% / 3);
+                    // width: calc(100% / 3);
+                    width: 50%;
+                    display: flex;
                     position: relative;
                     opacity: 0;
                     overflow: hidden;
@@ -628,6 +633,7 @@ body {
             @include screen767() {
                 .grid {
                     flex-direction: column;
+                    max-width: unset;
 
                     .image {
                         width: 100%;

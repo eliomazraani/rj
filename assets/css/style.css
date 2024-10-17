@@ -415,9 +415,12 @@ body main .content {
 body main .videos .grid {
   display: flex;
   flex-wrap: wrap;
+  max-width: 66.6666666667%;
+  margin: auto;
 }
 body main .videos .grid .image {
-  width: 33.3333333333%;
+  width: 50%;
+  display: flex;
   position: relative;
   opacity: 0;
   overflow: hidden;
@@ -481,20 +484,21 @@ body main .videos .grid .image:hover .bottom {
 @media (max-width: 767px) {
   body main .videos .grid {
     flex-direction: column;
+    max-width: unset;
   }
   body main .videos .grid .image {
     width: 100%;
-  }
-  body main .videos .grid .image img {
-    transform: scale(1.2);
   }
 }
 body main .projects .grid {
   display: flex;
   flex-wrap: wrap;
+  max-width: 66.6666666667%;
+  margin: auto;
 }
 body main .projects .grid .image {
-  width: 33.3333333333%;
+  width: 50%;
+  display: flex;
   position: relative;
   opacity: 0;
   overflow: hidden;
@@ -535,6 +539,7 @@ body main .projects .grid .image:hover .top {
 @media (max-width: 767px) {
   body main .projects .grid {
     flex-direction: column;
+    max-width: unset;
   }
   body main .projects .grid .image {
     width: 100%;
