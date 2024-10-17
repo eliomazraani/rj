@@ -41,7 +41,7 @@
         </div>
     </div>
 
-    <header :class="[{'scroll': (scrollPosition > 50 || page == 'project')}, {'phone': windowWidth <= 767}]">
+    <header v-if="toShow" :class="[{'scroll': (scrollPosition > 50 || page == 'project')}, {'phone': windowWidth <= 767}]">
         <div v-if="windowWidth > 767" class="desktop">
             <img src="assets/img/logo.png" alt="Img">
             <ul v-if="page == 'home'">
@@ -77,7 +77,7 @@
         </div>
     </header>
 
-    <div v-if="windowWidth <= 767" :class="['mobileMenu', {'slide': openMobileMenu}]">
+    <div v-if="windowWidth <= 767 && toShow" :class="['mobileMenu', {'slide': openMobileMenu}]">
         <div class="menuList">
             <i @click="closeMenu()" class="fa fa-times" aria-hidden="true"></i>
             <ul>
@@ -129,7 +129,7 @@
         </div>
     </div>
 
-    <main>
+    <main v-if="toShow">
         <div v-if="page == 'home'">
             <div class="music" id="music">
                 <div class="bgOverlay"></div>
@@ -393,7 +393,7 @@
         </div>
     </main>
 
-    <div v-if="page == 'home'" :class="['modal', {'show': showModal}]" id="modal">
+    <div v-if="page == 'home' && toShow" :class="['modal', {'show': showModal}]" id="modal">
         <div class="counter">{{ imageIndex + 1 }} / {{ gallery.length }}</div>
         <i @click="closeModal()" class="fa fa-times" aria-hidden="true"></i>
         <i @click="showImage(-1, true)" class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -403,7 +403,7 @@
         <i @click="showImage(1, true)" class="fa fa-arrow-right" aria-hidden="true"></i>
     </div>
 
-    <div class="subscribe" id="subscribe">
+    <div v-if="toShow" class="subscribe" id="subscribe">
         <div class="wrap">
             <div class="title">SUBSCRIBE</div>
             <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
@@ -414,7 +414,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer v-if="toShow">
         <div class="wrap">
             <div class="rights">
                 &copy; <span id="date"></span> Raphael Jabbour. All Rights Reserved

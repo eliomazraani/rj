@@ -123,6 +123,7 @@ const app = Vue.createApp({
     data() {
         return {
             isLoading: true,
+            toShow: false,
             page: "home",
             windowWidth: window.innerWidth,
             scrollPosition: 0,
@@ -150,33 +151,39 @@ const app = Vue.createApp({
     mounted() {
         window.vueApp = this;
 
-        window.addEventListener("resize", this.updateWindowWidth);
-        window.addEventListener("resize", this.updateSectionOffsets);
-        window.addEventListener("scroll", this.scrollTop);
-        window.addEventListener("scroll", this.scrollFade);
-        window.addEventListener("scroll", this.parallaxEffect);
-        window.addEventListener("click", this.handleMenu);
-
-        this.setHeight();
-        this.updateSectionOffsets();
-        this.setDurations();
-
-        const audio = $("#currentTrack");
-        audio.on("loadedmetadata", () => this.updateDuration());
-        audio.on("timeupdate", () => this.updateTime());
-        audio.on("ended", () => this.handleAudioEnded());
-
         $("html, body").animate({
             scrollTop: 0
         }, 500);
-        
+
+        setTimeout(() => {
+            this.toShow = true;
+        }, 250);
+
+        setTimeout(() => {
+            window.addEventListener("resize", this.updateWindowWidth);
+            window.addEventListener("resize", this.updateSectionOffsets);
+            window.addEventListener("scroll", this.scrollTop);
+            window.addEventListener("scroll", this.scrollFade);
+            window.addEventListener("scroll", this.parallaxEffect);
+            window.addEventListener("click", this.handleMenu);
+    
+            this.setHeight();
+            this.updateSectionOffsets();
+            this.setDurations();
+    
+            const audio = $("#currentTrack");
+            audio.on("loadedmetadata", () => this.updateDuration());
+            audio.on("timeupdate", () => this.updateTime());
+            audio.on("ended", () => this.handleAudioEnded());
+            
+            const today = new Date();
+            $("footer #date").html(today.getFullYear());
+        }, 500);
+
         setTimeout(() => {
             this.isLoading = false;
             $("#music .logo").addClass("fade");
         }, 2000);
-
-        const today = new Date();
-        $("footer #date").html(today.getFullYear());
     },
     methods: {
         setHeight() {
@@ -228,10 +235,12 @@ const app = Vue.createApp({
         },
         goHome(scrollToProject = false) {
             this.isLoading = true;
+            this.toShow = false;
             this.playClicked = false;
 
             setTimeout(() => {
                 this.page = "home";
+                this.toShow = true;
                 if (!scrollToProject) {
                     $("html, body").animate({
                         scrollTop: 0
@@ -325,12 +334,14 @@ const app = Vue.createApp({
                 this.projectIndex = index;
             }
             this.isLoading = true;
+            this.toShow = false;
             this.projectSelected = this.projects[this.projectIndex];
             this.playClicked = false;
             this.time = "0:00";
             
             setTimeout(() => {
                 this.page = "project";
+                this.toShow = true;
                 $("html, body").animate({
                     scrollTop: 0
                 }, 100);
