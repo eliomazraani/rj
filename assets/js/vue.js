@@ -1,33 +1,41 @@
 var songs = [
     {
-        name: "Hada Y2ella",
+        name: "Hada Y2ella - حدا يقلا",
         source: "assets/audio/Hada_Y2ella.mp3",
     },
     {
-        name: "Waat El Jadd",
+        name: "Matrah Ma Tnami - مطرح ما تنامي",
+        source: "assets/audio/Matrah_Ma_Tnami.mp3",
+    },
+    {
+        name: "Waat El Jadd - وقت الجد",
         source: "assets/audio/Waat_El_Jadd.mp3",
+    },
+    {
+        name: "Shayef Ya Albi - شايف يا قلبي",
+        source: "assets/audio/Shayef_Ya_Albi.mp3",
     }
 ]
 
 var videos = [
     {
         image: "assets/img/videos/Hada_Y2ella.jpg",
-        name: "Hada Y2ella",
+        name: "Hada Y2ella -  حدا يقلا",
         source: "https://youtu.be/JadTeiIRQ1E?si=FlPNhFh_lobtu7uB"
     },
     {
         image: "assets/img/videos/Matrah_Ma_Tnami.jpg",
-        name: "Matrah Ma Tnami",
+        name: "Matrah Ma Tnami - مطرح ما تنامي",
         source: "https://youtu.be/Haj_BY3e3g0?si=6OIyoiVG8R2fr6-G"
     },
     {
         image: "assets/img/videos/Waet_El_Gadd.jpg",
-        name: "Waat El Jadd",
+        name: "Waat El Jadd - وقت الجد",
         source: "https://youtu.be/ycqyd0o-fOI?si=FBYAx-HufgwfBEMd"
     },
     {
         image: "assets/img/videos/Shayef_Ya_Albi.jpg",
-        name: "Shayef Ya Albi",
+        name: "Shayef Ya Albi - شايف يا قلبي",
         source: "https://youtu.be/wzRzZj9D23U?si=xN09Gp4xcilzW9jT"
     },
 ];
@@ -37,7 +45,7 @@ var projects = [
         projectImg: "assets/projects/CarlosAzar/cover.jpg",
         song: {
             artist: "Carlos Azar",
-            name: "Kel Ma Bdeelik",
+            name: "Kel Ma Bdeelik - كل ما بدقلك",
             source: "assets/projects/CarlosAzar/Kel_Ma_Bdeelik.mp3",
         },
         lyrics: "شو حكيولك عنّي <br> اوعا تكوني صدّقتي <br> صاير عم بغفا <br> وبوعا على صوتك انتِ <br> أنا كل ما بدقلّك <br> تقلّك شو اشتقتلّك <br> ما ردَّيتي قبل الدقّة <br> بحسّك طوَّلتي <br> أنتِ بقلبي وفكري <br> ولا لحظة تفتكري <br> إنّك بتغيبي عن بالي <br> يا حياتي انتِ <br> مين لِحطَّلك براسك <br> إني ناسيكي <br> أنا وقت لِبنساكي بكون <br> عم فكِّر فيكي <br> وبتخيَّل وجّك قدامي <br> وع ايديي عم بتنامي <br> وأنا قاعد هالليل بطولو <br> عم غنّج فيكي",
@@ -56,7 +64,7 @@ var projects = [
         projectImg: "assets/projects/Cybelle/cover.jpg",
         song: {
             artist: "Cybelle",
-            name: "Aala Mazajou",
+            name: "Aala Mazajou - على مزاجو",
             source: "assets/projects/Cybelle/Aala_Mazajou.mp3",
         },
         lyrics: "صاير على مزاجو قلبي عم بدق وإن ما شافك يا حبيبي عليي صار ينق <br> صاير على مزاجو قلبي عم بدق وإن ما شافك يا حبيبي عليي صار ينق <br><br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> صاير على مزاجو قلبي عم بدق <br><br> يا لا لا لا لا لا لا لا <br> يا لا لا لا لا لا لا لا <br><br> كل ما بسمع غنية قلبي بذكرني فيك بلاقي حالي كل شوية من دون قصدي عم بحكيك <br> كل ما بسمع غنية قلبي بذكرني فيك بلاقي حالي كل شوية من دون قصدي عم بحكيك <br><br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> بدو ياك بدو تبقى على طول حدو وغيرك إنت ما عندو <br> ما عندو ما عندو ما عندو <br> صاير على مزاجو قلبي عم بدق",
@@ -75,7 +83,7 @@ var projects = [
         projectImg: "assets/projects/HadiDaou/cover.jpg",
         song: {
             artist: "Hadi Daou",
-            name: "Mesh Aam Beqdar",
+            name: "Mesh Aam Beqdar - مش عم بقدر",
             source: "assets/projects/HadiDaou/Mesh_Aam_Beqdar.mp3",
         },
         lyrics: "عم فتّش فيها عليكِ <br> حتى لاقيكي فيا <br> عم بتخايل عينيكِ <br> كلما بتطلّع فيا <br> وباخدها لنفس المطارح <br> يللّي كنا نروحا مبارح <br> ببقى حدها لكن سارح <br> فيكي ومش حاسس فيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا <br><br> عم جرّب  إلهي حالي <br> مع وحدة غيرِك إعشقا <br> وجرّب إمحيكي من بالي <br> تا حتى إنساكي بَقا <br> بس يلي عرفتا شو ذنبا <br> أظلمها وإجرح قلبا <br> ما زالِك انتي للي بحبّا <br> مش لازم فَكّر فِيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا",
@@ -93,7 +101,7 @@ var projects = [
         projectImg: "assets/projects/NajiOsta/cover.jpg",
         song: {
             artist: "Naji Osta",
-            name: "Jiti Mn El Bahr",
+            name: "Jiti Mn El Bahr - جيتي من البحر",
             source: "assets/projects/NajiOsta/Jiti_Mn_El_Bahr.mp3",
         },
         lyrics: "جيتي من البحر لونِك شو حلو <br> مسكوبِه الشمس عا جسمِك دخلو ما أجملو <br> شو فيكي سحر وشو زدتي حلا <br> حتى ملح البحر عليكي طعمو حلو <br><br> جيتي من البحر لونِك شو حلو <br> مسكوبِه الشمس عا جسمِك دخلو ما أجملو <br> شو فيكي سحر وشو زدتي حلا <br> حتى ملح البحر عليكي طعمو حلو <br><br> شو صار وضعي صعب ما عاد عندي قلب <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك ما بحمِلو <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك <br> (يقبرني الحلو) <br><br> لو رحتي بكرا خِديني معك <br> أنا ما بدي وجّع راسي <br> وبالي إشغِلو <br> خايف شي حدا <br> كلمة يسَمِّعِك <br> ويفكِّر يتغزَّل فيكي <br> يمكن بِقتِلو <br><br> شو صار وضعي صعب ما عاد عندي قلب <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك ما بحمِلو <br> شو صار وضعي صعب ما عاد عندي قلب <br> يقدر يتحمّل جمالِك <br> (يقبرني الحلو)",
@@ -109,21 +117,20 @@ var projects = [
 ];
 
 var gallery = [
-    "assets/img/bgSquare.png",
-    "assets/img/bgC.jpg",
-    "assets/img/bgSquare.png",
-    "assets/img/bgC.jpg",
-    "assets/img/bgSquare.png",
-    "assets/img/bgC.jpg",
-    "assets/img/bgSquare.png",
-    "assets/img/bgC.jpg",
+    "assets/img/pictures/012A1864.jpg",
+    "assets/img/pictures/012A2267.jpg",
+    "assets/img/pictures/012A2224.jpg",
+    "assets/img/pictures/012A1817.jpg",
+    "assets/img/pictures/012A1845.jpg",
+    "assets/img/pictures/012A2306.jpg",
+    "assets/img/pictures/012A2054.jpg",
+    "assets/img/pictures/012A2022.jpg",
 ];
 
 const app = Vue.createApp({
     data() {
         return {
             isLoading: true,
-            toShow: false,
             page: "home",
             windowWidth: window.innerWidth,
             scrollPosition: 0,
@@ -151,34 +158,30 @@ const app = Vue.createApp({
     mounted() {
         window.vueApp = this;
 
+        emailjs.init("hEECLLd91lIDSQBLz");
+
         $("html, body").animate({
             scrollTop: 0
         }, 500);
 
-        setTimeout(() => {
-            this.toShow = true;
-        }, 250);
+        window.addEventListener("resize", this.updateWindowWidth);
+        window.addEventListener("resize", this.updateSectionOffsets);
+        window.addEventListener("scroll", this.scrollTop);
+        window.addEventListener("scroll", this.scrollFade);
+        window.addEventListener("scroll", this.parallaxEffect);
+        window.addEventListener("click", this.handleMenu);
 
-        setTimeout(() => {
-            window.addEventListener("resize", this.updateWindowWidth);
-            window.addEventListener("resize", this.updateSectionOffsets);
-            window.addEventListener("scroll", this.scrollTop);
-            window.addEventListener("scroll", this.scrollFade);
-            window.addEventListener("scroll", this.parallaxEffect);
-            window.addEventListener("click", this.handleMenu);
-    
-            this.setHeight();
-            this.updateSectionOffsets();
-            this.setDurations();
-    
-            const audio = $("#currentTrack");
-            audio.on("loadedmetadata", () => this.updateDuration());
-            audio.on("timeupdate", () => this.updateTime());
-            audio.on("ended", () => this.handleAudioEnded());
-            
-            const today = new Date();
-            $("footer #date").html(today.getFullYear());
-        }, 500);
+        this.setHeight();
+        this.updateSectionOffsets();
+        this.setDurations();
+
+        const audio = $("#currentTrack");
+        audio.on("loadedmetadata", () => this.updateDuration());
+        audio.on("timeupdate", () => this.updateTime());
+        audio.on("ended", () => this.handleAudioEnded());
+        
+        const today = new Date();
+        $("footer #date").html(today.getFullYear());
 
         setTimeout(() => {
             this.isLoading = false;
@@ -235,12 +238,10 @@ const app = Vue.createApp({
         },
         goHome(scrollToProject = false) {
             this.isLoading = true;
-            this.toShow = false;
             this.playClicked = false;
 
             setTimeout(() => {
                 this.page = "home";
-                this.toShow = true;
                 if (!scrollToProject) {
                     $("html, body").animate({
                         scrollTop: 0
@@ -334,14 +335,12 @@ const app = Vue.createApp({
                 this.projectIndex = index;
             }
             this.isLoading = true;
-            this.toShow = false;
             this.projectSelected = this.projects[this.projectIndex];
             this.playClicked = false;
             this.time = "0:00";
             
             setTimeout(() => {
                 this.page = "project";
-                this.toShow = true;
                 $("html, body").animate({
                     scrollTop: 0
                 }, 100);
@@ -360,16 +359,40 @@ const app = Vue.createApp({
             var name = $("#name").val();
             var email = $("#email").val();
             var message = $("#message").val();
-            console.log(name, email, message);
-            $("#name").val("");
-            $("#email").val("");
-            $("#message").val("");
+
+            const contactParams = {
+                from_name: name,
+                email: email,
+                message: message,
+            };
+    
+            emailjs.send("service_yuko1se", "template_djzp98g", contactParams)
+                .then((response) => {
+                    console.log("Email sent successfully!", response.status, response.text);
+                    $("#name").val("");
+                    $("#email").val("");
+                    $("#message").val("");
+                })
+                .catch((error) => {
+                    console.error("Failed to send email", error);
+                });
         },
         subscribe() {
             var email = $("#userEmail").val();
-            console.log(email);
-            $("#userEmail").val("");
-        },
+
+            const subscribeParams = {
+                email: email,
+            };
+    
+            emailjs.send("service_yuko1se", "template_wr4vvja", subscribeParams)
+                .then((response) => {
+                    console.log("Subscription email sent successfully!", response.status, response.text);
+                    $("#userEmail").val("");
+                })
+                .catch((error) => {
+                    console.error("Failed to send subscription email", error);
+                });
+        },    
         showImage(index, fromModal = false) {
             if (fromModal) {
                 const direction = index === 1 ? "slide-left" : "slide-right";
@@ -425,18 +448,27 @@ const app = Vue.createApp({
         parallaxEffect() {
             if (this.windowWidth > 767) {
                 const scrollPosition = $(window).scrollTop();
-                const parallaxSpeed = 0.3; 
-                
-                $(".banner").each(function() {
-                    const image = $(this).find(".banBG");
-            
-                    if (image.length) {
-                        const imageOffset = scrollPosition * parallaxSpeed;
-                        image.css("transform", `translate(-50%, -${imageOffset}px)`);
+                const parallaxSpeed = 0.3;
+                const sections = [
+                    { name: "videos", selector: "#videos .banBG" },
+                    { name: "projects", selector: "#projects .banBG" },
+                    { name: "biography", selector: "#biography .banBG" },
+                    { name: "contact", selector: "#contact .banBG" }
+                ];
+        
+                sections.forEach((section) => {
+                    const sectionOffset = this.sectionOffsets[section.name];
+                    if (section.name == "videos" || scrollPosition > (0.5 * sectionOffset)) {
+                        const image = $(section.selector);
+        
+                        if (image.length) {
+                            const imageOffset = (scrollPosition - (section.name === 'videos' ? 0 : sectionOffset)) * parallaxSpeed;
+                            image.css("transform", `translate(-50%, -${imageOffset}px)`);
+                        }
                     }
                 });
             }
-        },
+        },        
         handleMenu(event) {
             var menuList = $("header .mobile .fa-bars")[0];
             if (this.openMobileMenu && !menuList.contains(event.target)) {

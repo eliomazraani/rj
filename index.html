@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/logo/logo.png" type="image/x-icon">
     <title>Raphael Jabbour</title>
 
     <!-- SCSS File -->
@@ -27,6 +27,10 @@
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://unpkg.com/emailjs-com@latest/dist/email.min.js"></script>
 </head>
 <body id="app">
     <div :class="['loading-overlay', {'hide': !isLoading}]" id="loading-overlay">
@@ -41,9 +45,9 @@
         </div>
     </div>
 
-    <header v-if="toShow" :class="[{'scroll': (scrollPosition > 50 || page == 'project')}, {'phone': windowWidth <= 767}]">
+    <header :class="[{'scroll': (scrollPosition > 50 || page == 'project')}, {'phone': windowWidth <= 767}]">
         <div v-if="windowWidth > 767" class="desktop">
-            <img src="assets/img/logo.png" alt="Img">
+            <img src="assets/img/logo/logo.png" alt="Img">
             <ul v-if="page == 'home'">
                 <li>
                     <a @click="goToSection('music')" :class="{'active': scrollPosition >= sectionOffsets.music && scrollPosition < sectionOffsets.videos}" href="#music">MUSIC</a>
@@ -71,13 +75,13 @@
             </ul>
         </div>
         <div v-else class="mobile">
-            <img src="assets/img/logo.png" alt="Img">
+            <img src="assets/img/logo/logo.png" alt="Img">
             <i v-if="page == 'home'" @click="slideMenu()"  class="fa fa-bars" aria-hidden="true"></i>
             <a v-else @click="goHome()" href="">HOME</a>
         </div>
     </header>
 
-    <div v-if="windowWidth <= 767 && toShow" :class="['mobileMenu', {'slide': openMobileMenu}]">
+    <div v-if="windowWidth <= 767" :class="['mobileMenu', {'slide': openMobileMenu}]">
         <div class="menuList">
             <i @click="closeMenu()" class="fa fa-times" aria-hidden="true"></i>
             <ul>
@@ -129,12 +133,12 @@
         </div>
     </div>
 
-    <main v-if="toShow">
+    <main>
         <div v-if="page == 'home'">
             <div class="music" id="music">
                 <div class="bgOverlay"></div>
                 <div class="logo">
-                    <img src="assets/img/logo&name.png" alt="Img">
+                    <img src="assets/img/logo/logo&name.png" alt="Img">
                 </div>
                 <div class="audio">
                     <div :class="['audiolist', {'show' : listShow}]">
@@ -182,7 +186,7 @@
             </div>
             <div class="videos" id="videos">
                 <div class="banner">
-                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
+                    <img src="assets/img/cover/vidCover.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         VIDEOS
@@ -205,7 +209,7 @@
             </div>
             <div class="projects" id="projects">
                 <div class="banner">
-                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
+                    <img src="assets/img/cover/projCover.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         PROJECTS
@@ -224,45 +228,28 @@
             </div>
             <div class="biography" id="biography">
                 <div class="banner">
-                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
+                    <img src="assets/img/cover/bioCover.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         BIOGRAPHY
                     </h2>
                 </div>
                 <div class="wrap content">
-                    <p>
-                        **Raphael Jabbour: Performer, Songwriter, Singer, and Music Director**
-                    </p>
-                    
-                    <p>
-                        Welcome to my official biography. I am Raphael Jabbour, a Lebanese artist born in 1996 and raised in Kesserwan, Lebanon, within a close-knit family of four.
-                    </p>
-                    
-                    <p>
-                        My journey into the spotlight began in September 2015 when I was selected to participate in *Star Academy Arabia, Season 11*—a popular reality TV show broadcast across the Middle East and the Arab world. Although I was eliminated during the semi-finals, the experience proved invaluable, leading to significant personal and professional growth.
-                    </p>
-                    
-                    <p>
-                        Following the show, I released a single on Anghami that quickly gained traction, achieving over 2 million downloads. My breakthrough continued in 2016 when I was honored with the Best Rising Star award at the Middle East Music Awards in Cairo, Egypt. In 2017, my career reached new heights as I was invited to perform as the Honorary Guest Singer at the Cairo Music Festival and was nominated for the Murex D’Or music award in Beirut, Lebanon. One of the highlights of my career was performing at the prestigious Cairo Opera House, a moment I will always cherish.
-                    </p>
-                    
-                    <p>
-                        In 2020, I moved to Canada to study sound design at one of the most renowned music institutes, aiming to merge music technology with my talent and open a career path in professional sound design. In 2022, I returned to Beirut to sell my first composed track, marking the start of my career in composing and songwriting. I made it a priority to maintain the Arabic essence in all my creations, guiding artists through the process to help them reach their highest potential and unique character, delivering authenticity in every measure.
-                    </p>
-                    
-                    <p>
-                        In 2023, I opened *Audio Cuisine*, a studio salon where artists come together to create in a friendly environment. Taking my personal career to a professional level, we deliver a variety of services, from recording to mixing, mastering, and songwriting, collaborating with well-known artists in Beirut.
-                    </p>
-                    
-                    <p>
-                        In 2024, I had the opportunity to direct a full music show performed weekly. My role involved creating the most suitable setlist for each singer, based on their vocal capacity and character, to deliver a unique sound for the live scene, combining a live band with backing tracks. This experience brought me closer to my vision for live performances. I was honored to collaborate on this project with the uniquely talented artistic director Rachel Asmar and her dedicated team. You can check the final outcome on the website (<a href="https://www.rachelasmar.com" target="_blank">https://www.rachelasmar.com</a>).
-                    </p>
-                    
-                    <p>
-                        Today, I am still learning with every moment, searching for unique opportunities to collaborate with real artists to achieve my vision in the music industry—whether in live performance or record production. Meanwhile, I’m working on my next releases, 24/7 dreaming about how I can deliver what's in my mind to your heart.
-                        Thank you for visiting, and I look forward to sharing more of my musical journey with you.
-                    </p>
+                    <p><b>Raphael Jabbour:</b> Performer, Songwriter, Singer, and Music Director</p>
+
+                    <p>Welcome to my official Biography. I am Raphael Jabbour, a <span class="orange">Lebanese Artist</span> born in 1996 and raised in Kesserwan, Lebanon, within a close-knit family of four.</p>
+
+                    <p>My journey into the spotlight began in September 2015 when I was selected to participate in <span class="yellow">Star Academy Arabia, Season 11</span>—a popular reality TV show broadcast across the Middle East and the Arab world. Although I was eliminated during the semi-finals, the experience proved invaluable, leading to significant personal and professional growth.</p>
+
+                    <p>Following the show, I released a single on Anghami that quickly gained traction, achieving over <span class="yellow">2 million downloads.</span> My breakthrough continued in 2016 when I was honored with the <span class="orange">Best Rising Star</span> award at the Middle East Music Awards in Cairo, Egypt. In 2017, my career reached new heights as I was invited to perform as the Honorary Guest Singer at the Cairo Music Festival and was nominated for the Murex D’Or music award in Beirut, Lebanon. One of the highlights of my career was performing at the prestigious <span class="orange">Cairo Opera House</span>, a moment I will always cherish.</p>
+
+                    <p>In 2020, I moved to <b>Canada</b> to study <span class="yellow">Sound Design</span> at one of the most renowned music institutes, aiming to merge music technology with my talent and open a career path in professional sound design. In 2022, I returned to <b>Beirut</b> to sell my first composed track, marking the start of my career in <span class="orange">composing and songwriting.</span> I made it a priority to maintain the Arabic essence in all my creations, <b>guiding artists</b> through the process to help them reach their highest potential and unique character, delivering authenticity in every measure.</p>
+
+                    <p>In 2023, I opened <span class="yellow">Audio Cuisine</span>, a studio salon where artists come together to create in a friendly environment. Taking my personal career to a professional level, we deliver a variety of services, from recording to mixing, mastering, and songwriting, collaborating with <b>well-known artists</b> in Beirut.</p>
+
+                    <p>In 2024, I had the opportunity to <span class="orange">direct a full Music show</span> performed weekly. My role involved creating the most suitable set list for each singer, based on their vocal capacity and character, to deliver a unique sound for the live scene, combining a live band with backing tracks. This experience brought me closer to my vision for live performances. I was honored to collaborate on this project with the uniquely talented artistic director Rachel Asmar and her dedicated team. You can check the final outcome on the website (<a href="https://www.rachelasmar.com" target="_blank">https://www.rachelasmar.com</a>).</p>
+
+                    <p>Today, I am still learning with every moment, searching for unique opportunities to collaborate with real artists to achieve my vision in the music industry—whether in <b>Live Performance</b> or <b>Record Production</b>. Meanwhile, I’m working on my next releases, 24/7 dreaming about how I can deliver what's in my mind to your heart. Thank you for visiting, and I look forward to sharing more of my musical journey with you.</p>
                 </div>
             </div>
             <div class="pictures" id="pictures">
@@ -276,7 +263,7 @@
             </div>
             <div class="contact" id="contact">
                 <div class="banner">
-                    <img src="assets/img/bg.jpg" alt="Img" class="banBG">
+                    <img src="assets/img/cover/contactCover.jpg" alt="Img" class="banBG">
                     <div class="banOverlay"></div>
                     <h2>
                         CONTACT
@@ -393,7 +380,7 @@
         </div>
     </main>
 
-    <div v-if="page == 'home' && toShow" :class="['modal', {'show': showModal}]" id="modal">
+    <div v-if="page == 'home'" :class="['modal', {'show': showModal}]" id="modal">
         <div class="counter">{{ imageIndex + 1 }} / {{ gallery.length }}</div>
         <i @click="closeModal()" class="fa fa-times" aria-hidden="true"></i>
         <i @click="showImage(-1, true)" class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -403,7 +390,7 @@
         <i @click="showImage(1, true)" class="fa fa-arrow-right" aria-hidden="true"></i>
     </div>
 
-    <div v-if="toShow" class="subscribe" id="subscribe">
+    <div class="subscribe" id="subscribe">
         <div class="wrap">
             <div class="title">SUBSCRIBE</div>
             <div class="description">Sign-up to our newsletter to recieve the latest news directly in your inbox!</div>
@@ -414,7 +401,7 @@
         </div>
     </div>
 
-    <footer v-if="toShow">
+    <footer>
         <div class="wrap">
             <div class="rights">
                 &copy; <span id="date"></span> Raphael Jabbour. All Rights Reserved
@@ -434,21 +421,26 @@
                     <i class="fab fa-youtube"></i>
                 </a>
                 <a href="https://www.facebook.com/RaphaelJabbour/" target="_blank">
-                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="https://www.instagram.com/raphaeljabbour11/" target="_blank">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://x.com/raphaeljabbour1" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@raphaeljabbour" target="_blank">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="#" target="_blank">
+                <!-- <a href="#" target="_blank">
                     <i class="fab fa-spotify"></i>
-                </a>
-                <a href="#" target="_blank">
+                </a> -->
+                <a href="https://music.apple.com/lb/artist/raphael-jabbour/1528034297" target="_blank">
                     <i class="fab fa-apple"></i>
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.deezer.com/fr/artist/104267882" target="_blank">
                     <i class="fab fa-deezer"></i>
                 </a>
             </div>
