@@ -132,12 +132,61 @@ body header .desktop ul li a {
 body header .desktop ul li a.active, body header .desktop ul li a:hover {
   opacity: 0.66;
 }
+body header .desktop .media {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 100px;
+}
+body header .desktop .media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  color: #0d0d0d;
+  text-decoration: none;
+}
+body header .desktop .media a i {
+  font-size: initial;
+}
+body header .desktop .media a svg {
+  width: 100%;
+  height: 100%;
+}
+body header .desktop .media a svg path {
+  fill: #0d0d0d;
+}
+body header .desktop .media a img {
+  width: 100%;
+  display: block;
+}
+body header .desktop .media a:hover {
+  opacity: 0.66;
+}
+body header .desktop .media a:hover svg path {
+  opacity: 0.66;
+}
+@media only screen and (max-width: 1300px) {
+  body header .desktop .media {
+    top: 42px;
+    flex-direction: column;
+  }
+}
 body header.scroll {
   min-height: 55px;
   background-color: #fff;
+  z-index: 7;
 }
 body header.scroll .desktop img {
   display: block;
+}
+body header.scroll .desktop .media {
+  display: none;
 }
 body header.phone {
   min-height: 55px;
@@ -233,16 +282,44 @@ body .mobileMenu .menuList .bottom .subscribeButton {
 }
 body .mobileMenu .menuList .bottom .media {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 body .mobileMenu .menuList .bottom .media a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
   color: #888;
+  text-decoration: none;
 }
 body .mobileMenu .menuList .bottom .media a i {
-  font-size: 17px;
+  font-size: initial;
+}
+body .mobileMenu .menuList .bottom .media a svg {
+  width: 100%;
+  height: 100%;
+}
+body .mobileMenu .menuList .bottom .media a svg path {
+  fill: #888;
+}
+body .mobileMenu .menuList .bottom .media a img {
+  width: 100%;
+}
+body .mobileMenu .menuList .bottom .media a .hover {
+  display: none;
 }
 body .mobileMenu .menuList .bottom .media a:hover {
   color: #333;
+}
+body .mobileMenu .menuList .bottom .media a:hover svg path {
+  fill: #333;
+}
+body .mobileMenu .menuList .bottom .media a:hover .noHover {
+  display: none;
+}
+body .mobileMenu .menuList .bottom .media a:hover .hover {
+  display: block;
 }
 body .mobileMenu.slide {
   z-index: 100;
@@ -291,7 +368,7 @@ body main .music .audio {
 body main .music .audio .song {
   font-size: 12px;
 }
-body main .music .audio .song .index {
+body main .music .audio .song .name {
   font-weight: 700;
 }
 body main .music .audio .time {
@@ -373,6 +450,7 @@ body main .banner .banBG {
   height: auto;
   max-height: none;
   z-index: -1;
+  transition: transform 0.1s ease;
 }
 body main .banner .banOverlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -490,6 +568,10 @@ body main .videos .grid .image:hover .bottom {
     width: 100%;
   }
 }
+body main .projects .banner img {
+  top: -45%;
+  transform: translate(-50%, 0px);
+}
 body main .projects .grid {
   display: flex;
   flex-wrap: wrap;
@@ -508,7 +590,7 @@ body main .projects .grid .image {
 body main .projects .grid .image img {
   width: 100%;
   height: 100%;
-  transform: scale(1.2);
+  transform: scale(1);
   transition: transform 0.75s ease;
 }
 body main .projects .grid .image .top {
@@ -530,13 +612,16 @@ body main .projects .grid .image.fade {
   opacity: 1;
 }
 body main .projects .grid .image:hover img {
-  transform: scale(1);
+  transform: scale(1.2);
 }
 body main .projects .grid .image:hover .top {
   opacity: 1;
   color: #fff;
 }
 @media (max-width: 767px) {
+  body main .projects .banner img {
+    top: 0%;
+  }
   body main .projects .grid {
     flex-direction: column;
     max-width: unset;
@@ -544,6 +629,10 @@ body main .projects .grid .image:hover .top {
   body main .projects .grid .image {
     width: 100%;
   }
+}
+body main .biography .banner img {
+  top: -45%;
+  transform: translate(-50%, 0px);
 }
 body main .biography .content {
   max-width: 750px;
@@ -558,6 +647,11 @@ body main .biography .content .orange {
 }
 body main .biography .content a {
   color: unset;
+}
+@media (max-width: 767px) {
+  body main .biography .banner img {
+    top: 0%;
+  }
 }
 body main .pictures .gallery {
   display: flex;
@@ -644,7 +738,6 @@ body main .project .wrap .title {
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.5;
-  margin-bottom: 35px;
 }
 body main .project .wrap .description {
   margin-top: 20px;
@@ -681,11 +774,11 @@ body main .project .wrap .left .song::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/indie.jpg");
-  background-position: center;
+  background-image: url("../img/projBanner/music.jpg");
+  background-position: center 65%;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(3px);
+  filter: blur(1.5px);
   z-index: -1;
 }
 body main .project .wrap .left .song .playpause {
@@ -718,6 +811,19 @@ body main .project .wrap .left .song .details .name {
 body main .project .wrap .left .song .details .time {
   font-size: 11px;
 }
+body main .project .wrap .left .lyrics .description {
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+body main .project .wrap .left .lyrics .description.showAll {
+  max-height: 1000px !important;
+}
+body main .project .wrap .left .lyrics .slideLyrics {
+  margin-top: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
 body main .project .wrap .right {
   width: calc(50% - 25px);
 }
@@ -744,6 +850,9 @@ body main .project .wrap .right .info {
   body main .project .wrap {
     flex-direction: column-reverse;
     row-gap: 35px;
+  }
+  body main .project .wrap .description {
+    height: unset !important;
   }
   body main .project .wrap .left,
   body main .project .wrap .right {
@@ -792,7 +901,8 @@ body .navigation .box.previous i {
   margin-right: 5px;
 }
 body .navigation .box.projectsList .container {
-  background-image: url("../img/indie.jpg");
+  background-image: url("../img/projBanner/music.jpg");
+  background-position: center 53%;
   align-items: center;
   justify-content: center;
   height: calc(100% - 60px);
@@ -1044,11 +1154,23 @@ body footer .wrap .media a svg {
 body footer .wrap .media a svg path {
   fill: #888;
 }
+body footer .wrap .media a img {
+  width: 100%;
+}
+body footer .wrap .media a .hover {
+  display: none;
+}
 body footer .wrap .media a:hover {
   color: #333;
 }
 body footer .wrap .media a:hover svg path {
   fill: #333;
+}
+body footer .wrap .media a:hover .noHover {
+  display: none;
+}
+body footer .wrap .media a:hover .hover {
+  display: block;
 }
 @media (max-width: 767px) {
   body footer .wrap {

@@ -42,25 +42,6 @@ var videos = [
 
 var projects = [
     {
-        projectImg: "assets/projects/CarlosAzar/cover.jpg",
-        song: {
-            artist: "Carlos Azar",
-            name: "Kel Ma Bdeelik - كل ما بدقلك",
-            source: "assets/projects/CarlosAzar/Kel_Ma_Bdeelik.mp3",
-        },
-        lyrics: "شو حكيولك عنّي <br> اوعا تكوني صدّقتي <br> صاير عم بغفا <br> وبوعا على صوتك انتِ <br> أنا كل ما بدقلّك <br> تقلّك شو اشتقتلّك <br> ما ردَّيتي قبل الدقّة <br> بحسّك طوَّلتي <br> أنتِ بقلبي وفكري <br> ولا لحظة تفتكري <br> إنّك بتغيبي عن بالي <br> يا حياتي انتِ <br> مين لِحطَّلك براسك <br> إني ناسيكي <br> أنا وقت لِبنساكي بكون <br> عم فكِّر فيكي <br> وبتخيَّل وجّك قدامي <br> وع ايديي عم بتنامي <br> وأنا قاعد هالليل بطولو <br> عم غنّج فيكي",
-        arabicLyrics: true,
-        story: "This composition is a deeply personal reflection of my inner world, a journey into memories filled with drama, nostalgia, and emotion. The lyrics convey raw and authentic feelings so I wanted the music to echo that same authenticity. <br> In this piece, we took a step back from digital production and recorded the instrumental track live. Each instrument, played in real-time, brought an emotional depth that simply couldn't be achieved otherwise. The result is a composition that feels as genuine and heartfelt as the moments it reflects, letting the listener feel every note and lyric with a unique intimacy.",
-        cover: "assets/projects/CarlosAzar/image.jpg",
-        releaseDate: "June 8, 2023",
-        lyricsBy: "Mounir Bou Assaf",
-        composer: "Raphael Jabbour",
-        musicArrangement: "Alexandre Missakian",
-        mixAndMastering: "Jean Pierre Boutros",
-        studio: "Play Sound Studios",
-        digitalDistribution: "Youmusic Arabia",
-    },
-    {
         projectImg: "assets/projects/Cybelle/cover.jpg",
         song: {
             artist: "Cybelle",
@@ -80,24 +61,6 @@ var projects = [
         digitalDistribution: "Watary",
     },
     {
-        projectImg: "assets/projects/HadiDaou/cover.jpg",
-        song: {
-            artist: "Hadi Daou",
-            name: "Mesh Aam Beqdar - مش عم بقدر",
-            source: "assets/projects/HadiDaou/Mesh_Aam_Beqdar.mp3",
-        },
-        lyrics: "عم فتّش فيها عليكِ <br> حتى لاقيكي فيا <br> عم بتخايل عينيكِ <br> كلما بتطلّع فيا <br> وباخدها لنفس المطارح <br> يللّي كنا نروحا مبارح <br> ببقى حدها لكن سارح <br> فيكي ومش حاسس فيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا <br><br> عم جرّب  إلهي حالي <br> مع وحدة غيرِك إعشقا <br> وجرّب إمحيكي من بالي <br> تا حتى إنساكي بَقا <br> بس يلي عرفتا شو ذنبا <br> أظلمها وإجرح قلبا <br> ما زالِك انتي للي بحبّا <br> مش لازم فَكّر فِيا <br><br> مش عم بقدر انسى انّي <br> بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني <br> عم صير بإسمك ناديا",
-        arabicLyrics: true,
-        story: "This track is full of energy, groove and movement. I made sure to include an oriental twist that reflects my roots. <br> While creating it, I imagined how I could melt all of these ideas together. I blended the rhythm and the melodies into one vibrant flow that feels both familiar and fresh. <br> Taking into consideration the unique character of hadi daou, I made sure to create a track that matches his style and live performances.",
-        cover: "assets/projects/HadiDaou/image.jpg",
-        releaseDate: "June 24, 2022",
-        lyricsBy: "Mounir Bou Assaf",
-        composer: "Raphael Jabbour",
-        musicArrangement: "Georges Kassis",
-        mixAndMastering: "Alexandre Missakian",
-        digitalDistribution: "Watary",
-    },
-    {
         projectImg: "assets/projects/NajiOsta/cover.jpg",
         song: {
             artist: "Naji Osta",
@@ -114,16 +77,53 @@ var projects = [
         musicArrangement: "Mounir Bou Assaf",
         digitalDistribution: "Watary",
     },
+    {
+        projectImg: "assets/projects/CarlosAzar/cover.jpg",
+        song: {
+            artist: "Carlos Azar",
+            name: "Kel Ma Bdeelik - كل ما بدقلك",
+            source: "assets/projects/CarlosAzar/Kel_Ma_Bdeelik.mp3",
+        },
+        lyrics: "شو حكيولك عنّي اوعا تكوني صدّقتي <br> صاير عم بغفا وبوعا على صوتك انتِ <br> أنا كل ما بدقلّك تقلّك شو اشتقتلّك <br> ما ردَّيتي قبل الدقّة بحسّك طوَّلتي <br> أنتِ بقلبي وفكري ولا لحظة تفتكري <br> إنّك بتغيبي عن بالي يا حياتي انتِ <br> مين لِحطَّلك براسك إني ناسيكي <br> أنا وقت لِبنساكي بكون عم فكِّر فيكي <br> وبتخيَّل وجّك قدامي وع ايديي عم بتنامي <br> وأنا قاعد هالليل بطولو عم غنّج فيكي",
+        arabicLyrics: true,
+        story: "This composition is a deeply personal reflection of my inner world, a journey into memories filled with drama, nostalgia, and emotion. The lyrics convey raw and authentic feelings so I wanted the music to echo that same authenticity. <br> In this piece, we took a step back from digital production and recorded the instrumental track live. Each instrument, played in real-time, brought an emotional depth that simply couldn't be achieved otherwise. The result is a composition that feels as genuine and heartfelt as the moments it reflects, letting the listener feel every note and lyric with a unique intimacy.",
+        cover: "assets/projects/CarlosAzar/image.jpg",
+        releaseDate: "June 8, 2023",
+        lyricsBy: "Mounir Bou Assaf",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Alexandre Missakian",
+        mixAndMastering: "Jean Pierre Boutros",
+        studio: "Play Sound Studios",
+        digitalDistribution: "Youmusic Arabia",
+    },
+    {
+        projectImg: "assets/projects/HadiDaou/cover.jpg",
+        song: {
+            artist: "Hadi Daou",
+            name: "Mesh Aam Beqdar - مش عم بقدر",
+            source: "assets/projects/HadiDaou/Mesh_Aam_Beqdar.mp3",
+        },
+        lyrics: "عم فتّش فيها عليكِ حتى لاقيكي فيا <br> عم بتخايل عينيكِ كلما بتطلّع فيا <br> وباخدها لنفس المطارح يللّي كنا نروحا مبارح <br> ببقى حدها لكن سارح فيكي ومش حاسس فيا <br><br> مش عم بقدر انسى انّي بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني عم صير بإسمك ناديا <br><br> عم جرّب  إلهي حالي مع وحدة غيرِك إعشقا <br> وجرّب إمحيكي من بالي تا حتى إنساكي بَقا <br> بس يلي عرفتا شو ذنبا أظلمها وإجرح قلبا <br> ما زالِك انتي للي بحبّا مش لازم فَكّر فِيا <br><br> مش عم بقدر انسى انّي بحبك انتي وشيلك منّي <br> مش ب ايدي غصبن عني عم صير بإسمك ناديا",
+        arabicLyrics: true,
+        story: "This track is full of energy, groove and movement. I made sure to include an oriental twist that reflects my roots. <br> While creating it, I imagined how I could melt all of these ideas together. I blended the rhythm and the melodies into one vibrant flow that feels both familiar and fresh. <br> Taking into consideration the unique character of hadi daou, I made sure to create a track that matches his style and live performances.",
+        cover: "assets/projects/HadiDaou/image.jpg",
+        releaseDate: "June 24, 2022",
+        lyricsBy: "Mounir Bou Assaf",
+        composer: "Raphael Jabbour",
+        musicArrangement: "Georges Kassis",
+        mixAndMastering: "Alexandre Missakian",
+        digitalDistribution: "Watary",
+    },
 ];
 
 var gallery = [
     "assets/img/pictures/012A1864.jpg",
     "assets/img/pictures/012A2267.jpg",
-    "assets/img/pictures/012A2224.jpg",
     "assets/img/pictures/012A1817.jpg",
+    "assets/img/pictures/012A2054.jpg",
+    "assets/img/pictures/012A2224.jpg",
     "assets/img/pictures/012A1845.jpg",
     "assets/img/pictures/012A2306.jpg",
-    "assets/img/pictures/012A2054.jpg",
     "assets/img/pictures/012A2022.jpg",
 ];
 
@@ -153,6 +153,7 @@ const app = Vue.createApp({
             projectIndex: 1,
             projectSelected: projects[1],
             openMobileMenu: false,
+            showLyrics: false,
         };
     },
     mounted() {
@@ -166,6 +167,7 @@ const app = Vue.createApp({
 
         window.addEventListener("resize", this.updateWindowWidth);
         window.addEventListener("resize", this.updateSectionOffsets);
+        window.addEventListener("resize", this.updateContainersHeights);
         window.addEventListener("scroll", this.scrollTop);
         window.addEventListener("scroll", this.scrollFade);
         window.addEventListener("scroll", this.parallaxEffect);
@@ -338,6 +340,11 @@ const app = Vue.createApp({
             this.projectSelected = this.projects[this.projectIndex];
             this.playClicked = false;
             this.time = "0:00";
+            if (this.windowWidth > 767) {
+                this.showLyrics = false;
+            } else {
+                this.showLyrics = true;
+            }
             
             setTimeout(() => {
                 this.page = "project";
@@ -347,6 +354,10 @@ const app = Vue.createApp({
             }, 500)
 
             setTimeout(() => {
+                this.updateContainersHeights();
+            }, 1000)
+
+            setTimeout(() => {
                 this.isLoading = false;
                 const audio = $("#projectTrack");
                 audio.on("loadedmetadata", () => this.updateDuration(true));
@@ -354,6 +365,9 @@ const app = Vue.createApp({
                 audio.on("ended", () => this.handleAudioEnded(true));
                 audio[0].load();
             }, 2000)
+        },
+        slideLyrics() {
+            this.showLyrics = true;
         },
         contact() {
             var name = $("#name").val();
@@ -425,24 +439,28 @@ const app = Vue.createApp({
             this.scrollPosition = $(window).scrollTop();
         },
         updateSectionOffsets() {
-            this.sectionOffsets = {
-                music: $("#music").offset().top - 55,
-                videos: $("#videos").offset().top - 55,
-                projects: $("#projects").offset().top - 55,
-                biography: $("#biography").offset().top - 55,
-                pictures: $("#pictures").offset().top - 55,
-                contact: $("#contact").offset().top - 55,
-            };
+            if (this.page == "home") {
+                this.sectionOffsets = {
+                    music: $("#music").offset().top - 55,
+                    videos: $("#videos").offset().top - 55,
+                    projects: $("#projects").offset().top - 55,
+                    biography: $("#biography").offset().top - 55,
+                    pictures: $("#pictures").offset().top - 55,
+                    contact: $("#contact").offset().top - 55,
+                };
+            }
         },
         scrollFade() {
-            if (this.scrollPosition >= this.sectionOffsets.videos) {
-                this.videosFade = true;
-            }
-            if (this.scrollPosition >= this.sectionOffsets.projects) {
-                this.projectsFade = true;
-            }
-            if (this.scrollPosition >= this.sectionOffsets.pictures) {
-                this.picturesFade = true;
+            if (this.page == "home") {
+                if (this.scrollPosition >= this.sectionOffsets.videos) {
+                    this.videosFade = true;
+                }
+                if (this.scrollPosition >= this.sectionOffsets.projects) {
+                    this.projectsFade = true;
+                }
+                if (this.scrollPosition >= this.sectionOffsets.pictures) {
+                    this.picturesFade = true;
+                }
             }
         },
         parallaxEffect() {
@@ -475,6 +493,26 @@ const app = Vue.createApp({
                 this.closeMenu();
             }
         },
+        updateContainersHeights() {
+            if (this.windowWidth > 767 && this.page == "project") {
+                var mainHeight = $(".project .right .cover").height() + 15;
+                var audioHeight = $(".project .left .song").outerHeight();
+                var titleHeight = $(".project .left .story .title").height();
+                var descriptionDiv = $(".project .left .story .description");
+                descriptionDiv.css("height", "auto");
+                var realHeight = descriptionDiv.height();
+                var neededHeight = mainHeight - (audioHeight + titleHeight + 98);
+                if (realHeight < neededHeight) {
+                    descriptionDiv.css("height", neededHeight + "px");
+                } else {
+                    descriptionDiv.css("height", realHeight + "px");
+                }
+
+                var credentialsHeight = $(".project .right .credentials").height();
+                var showMoreHeight = $(".project .left .lyrics .slideLyrics").height() + 10;
+                $(".project .left .lyrics .description").css("max-height", (credentialsHeight - showMoreHeight) + "px");
+            }
+        }
     },
 });
 
