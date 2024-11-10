@@ -3,11 +3,6 @@ body {
   font-family: "Roboto";
   background-color: #f7f7f7;
 }
-<<<<<<< HEAD
-body main .music {
-  position: relative;
-  background-image: url("../img/bg.jpg");
-=======
 body .loading-overlay {
   width: 100%;
   height: 100%;
@@ -337,7 +332,6 @@ body .mobileMenu.slide .menuList {
 body main .music {
   position: relative;
   background-image: url("../img/bgColor.jpg");
->>>>>>> local
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -349,8 +343,6 @@ body main .music .bgOverlay {
   right: 0;
   bottom: 0;
   left: 0;
-<<<<<<< HEAD
-=======
 }
 body main .music .logo {
   position: absolute;
@@ -1200,5 +1192,4 @@ body footer .wrap .media a:hover .hover {
     order: 2;
     margin: auto;
   }
->>>>>>> local
 }/*# sourceMappingURL=style.css.map */
